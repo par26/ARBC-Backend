@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 // Mount the members router at the specified path
-app.use("/api/v1/members", members); // Added a slash (/) before "api/v1/members"
+app.use("/api/", members); // Added a slash (/) before "api/v1/members"
 
 // Error handling middleware (handle 404 errors)
 app.use("*", (req, res) => res.status(404).json({ error: "Not valid request/url" }));
