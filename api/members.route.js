@@ -1,9 +1,11 @@
-import express from "express"
-import MembersCtrl from "./members.controller.js"
+import express from "express";
+import MembersCtrl from "./members.controller.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.route("/new").post(MembersCtrl.apiAddMembers)
-router.route("/new").get((req, res) => res.status(500).json({ error: "Poggers I think we're getting somewhere" }))
+router.route("/").post(MembersCtrl.apiAddMembers);
+router.route("/").get((req, res) => {
+  res.send('Hello Express app!');
+});
 
-export default router
+export default router;
